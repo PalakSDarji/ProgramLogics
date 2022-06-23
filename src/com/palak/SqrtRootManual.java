@@ -4,6 +4,10 @@ public class SqrtRootManual {
 
     private double PRECISION = 0.0009;
 
+    private double mathSqrt(double input){
+        return Math.sqrt(input);
+    }
+
     private double sqrt(double input){
 
         for(int i=1;i<=input;i++){
@@ -39,9 +43,26 @@ public class SqrtRootManual {
 
 
     public static void main(String[] args) {
+
+        SqrtRootManual sqrtRootManual = new SqrtRootManual();
+
+        long start = System.nanoTime();
+
         for(int i=1;i<=100;i++){
-            System.out.println("Sqrt of " + i +" : " + new SqrtRootManual().sqrt(i));
+            System.out.println("Sqrt of " + i +" : " + sqrtRootManual.sqrt(i));
         }
 
+        long diff = System.nanoTime()-start;
+        System.out.println(diff);
+
+        start = System.nanoTime();
+
+        for(int i=1;i<=100;i++){
+            System.out.println("Sqrt of " + i +" : " + sqrtRootManual.mathSqrt(i));
+        }
+
+        diff = System.nanoTime()-start;
+
+        System.out.println(diff);
     }
 }
