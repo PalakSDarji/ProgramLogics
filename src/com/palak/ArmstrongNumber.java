@@ -1,7 +1,7 @@
 package com.palak;
 
 /**
- * Armstrong number is 157 which is equal to 1^3 + 5^3 + 7^3.
+ * Armstrong number is 153 which is equal to 1^3 + 5^3 + 3^3.
  */
 
 public class ArmstrongNumber {
