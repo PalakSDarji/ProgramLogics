@@ -11,6 +11,7 @@ public class GCD {
 
     public static void main(String[] args) {
         GCD gcd = new GCD();
+        System.out.println(gcd.findGCD(10,15));
         System.out.println(gcd.findGCD(54,24));
         System.out.println(gcd.findGCD(10,45));
         System.out.println(gcd.findGCD(1701,3768));
