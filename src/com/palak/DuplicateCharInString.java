@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class DuplicateCharInString {
 
-    private Map<Character,Integer> map = new HashMap<>();
+    private final Map<Character,Integer> map = new HashMap<>();
 
     private void checkDuplicateCharsInStringAndPrint(String input){
 
@@ -23,6 +23,6 @@ public class DuplicateCharInString {
 
     public static void main(String[] args) {
 
-        new DuplicateCharInString().checkDuplicateCharsInStringAndPrint("Java Palak is love");
+        new DuplicateCharInString().checkDuplicateCharsInStringAndPrint("Java Palak");
     }
 }
