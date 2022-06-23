@@ -2,6 +2,7 @@ package com.palak;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class DuplicateCharInString {
 
@@ -18,11 +19,17 @@ public class DuplicateCharInString {
             map.put(c,++count);
         }
 
-        System.out.println(map);
+        Set<Map.Entry<Character,Integer>> set = map.entrySet();
+
+        for(Map.Entry<Character,Integer> entry : set){
+            if(entry.getValue() > 1){
+                System.out.println(entry.getKey() + " = " + entry.getValue());
+            }
+        }
     }
 
     public static void main(String[] args) {
 
-        new DuplicateCharInString().checkDuplicateCharsInStringAndPrint("Java Palak");
+        new DuplicateCharInString().checkDuplicateCharsInStringAndPrint("Java Palak Program");
     }
 }
