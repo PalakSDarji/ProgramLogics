@@ -12,6 +12,31 @@ public class CustomBinaryTree<T> {
         preOrder(root,visitable);
     }
 
+    private void preOrder(TreeNode<T> node, Visitable<T> visitable){
+        if(node == null) return;
+
+        visitable.visit(node);
+        preOrder(node.left,visitable);
+        preOrder(node.right,visitable);
+    }
+
+    public void preOrderWithoutRecursion(Visitable<T> visitable) {
+        Stack<TreeNode<T>> stack = new Stack<>();
+        stack.push(root);
+
+        while (!stack.isEmpty()){
+            TreeNode<T> current = stack.pop();
+            visitable.visit(current);
+
+            if(current.getRight() != null){
+                stack.push(current.getRight());
+            }
+            if(current.getLeft() != null){
+                stack.push(current.getLeft());
+            }
+        }
+    }
+
     public void inOrder(Visitable<T> visitable){
         inOrder(root,visitable);
     }
@@ -37,31 +62,6 @@ public class CustomBinaryTree<T> {
                 TreeNode<T> node = stack.pop();
                 visitable.visit(node);
                 current = node.getRight();
-            }
-        }
-    }
-
-    public void preOrder(TreeNode<T> node, Visitable<T> visitable){
-        if(node == null) return;
-
-        visitable.visit(node);
-        preOrder(node.left,visitable);
-        preOrder(node.right,visitable);
-    }
-
-    public void preOrderWithoutRecursion(Visitable<T> visitable) {
-        Stack<TreeNode<T>> stack = new Stack<>();
-        stack.push(root);
-
-        while (!stack.isEmpty()){
-            TreeNode<T> current = stack.pop();
-            visitable.visit(current);
-
-            if(current.getRight() != null){
-                stack.push(current.getRight());
-            }
-            if(current.getLeft() != null){
-                stack.push(current.getLeft());
             }
         }
     }
@@ -122,7 +122,7 @@ public class CustomBinaryTree<T> {
             right = null;
         }
 
-        boolean isLeaf(){
+        public boolean isLeaf(){
             return left == null && right == null;
         }
 

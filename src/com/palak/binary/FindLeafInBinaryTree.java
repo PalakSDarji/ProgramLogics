@@ -31,7 +31,7 @@ public class FindLeafInBinaryTree {
             }
             else {
                 CustomBinaryTree.TreeNode<Integer> node = stack.pop();
-                if(node.getRight() == null && node.getLeft() == null){
+                if(node.isLeaf()){
                     System.out.println("Node: "+ node.getData());
                 }
                 current = node.getRight();
@@ -47,7 +47,7 @@ public class FindLeafInBinaryTree {
     private void printLeavesRecursively(CustomBinaryTree.TreeNode<Integer> node) {
         if(node == null) return;
 
-        if(node.getLeft() == null && node.getRight() == null) {
+        if(node.isLeaf()) {
             System.out.println("Node: "+ node.getData());
         }
 
