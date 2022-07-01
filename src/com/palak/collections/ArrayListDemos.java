@@ -93,6 +93,26 @@ public class ArrayListDemos {
         System.out.println(integers);
     }
 
+    private void unModifiableList(){
+        List<String> al = Collections.unmodifiableList(new ArrayList<String>(){{
+            add("P");
+            add("L");
+            add("K");
+        }});
+        //al.set(0,"w"); //throws error
+
+        List al1 = List.of("W");
+        //al1.set(0,"v"); //throws error
+
+        List<String> normalList = new ArrayList<>(){{
+            add("A");
+        }};
+        List<String> al2 = Arrays.asList("A");
+        al2.set(0,"B"); //allowed
+        //al2.add("C"); //throws error
+        System.out.println("al2: "+al2);
+    }
+
     public static void main(String[] args) {
 
         List<Integer> list = new ArrayList<>();
@@ -108,5 +128,6 @@ public class ArrayListDemos {
         arrayListDemos.reverseArrayList(list);
         arrayListDemos.synchronizedArrayList(list);
         arrayListDemos.removeFromCopyOnWriteAL();
+        arrayListDemos.unModifiableList();
     }
 }
