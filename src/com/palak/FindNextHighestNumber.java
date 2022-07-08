@@ -22,6 +22,15 @@ public class FindNextHighestNumber {
             }
         }
 
+        String name = "palak";
+        System.out.println(name.substring(0));//palak
+        System.out.println(name.substring(name.length()-1)); //k
+        System.out.println(name.substring(name.length()));//empty string.
+        System.out.println(name.substring(1,1));//empty string.
+        System.out.println(name.substring(4,5));//k
+
+
+
         System.out.println("highest : " + highest);
         System.out.println("secondHighest : " + secondHighest);
     }
