@@ -1,7 +1,6 @@
 package com.palak.collections;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
+import java.util.*;
 
 public class DequePlay {
     public static void main(String[] args) {
@@ -54,6 +53,63 @@ public class DequePlay {
 
         arrayDeque.pop();//remove and returned -1.
         System.out.println(arrayDeque);//[2, 3, 4]
+
+
+        System.out.println("LinkedList starts -------------");
+        /**
+         *
+         * LINKED LIST:
+         *
+         */
+        LinkedList<Integer> linkedList = new LinkedList<Integer>();
+
+        linkedList.add(1);
+        linkedList.addFirst(0);
+        linkedList.addLast(2);
+
+        System.out.println(linkedList);//[0, 1, 2]
+
+        linkedList.add(1,-1);
+        System.out.println(linkedList);//[0, -1, 1, 2]
+        linkedList.set(2,-2);
+        System.out.println(linkedList);//[0, -1, -2, 2]
+
+        linkedList.offer(3);
+        System.out.println(linkedList);//[0, -1, -2, 2, 3]
+
+        System.out.println(linkedList.get(3)); //2
+
+        linkedList.push(-3); // push will add to front of linked list.
+        System.out.println(linkedList);//[-3, 0, -1, -2, 2, 3]
+
+        linkedList.pop(); //pop will remove from front.. stack like behavior.
+        System.out.println(linkedList);//[0, -1, -2, 2, 3]
+
+        Iterator desItr = linkedList.descendingIterator();//retrived from tail to head.
+        while (desItr.hasNext()){
+            System.out.print(desItr.next()+" ");
+        }
+
+        System.out.println();
+        System.out.println("---");
+
+        Spliterator<Integer> spliterators = linkedList.stream().spliterator();
+        while (spliterators.tryAdvance(i-> System.out.print(i+" ")));
+
+        System.out.println();
+        System.out.println("---");
+        Spliterator<Integer> sp1 = linkedList.spliterator();
+        sp1.forEachRemaining(i->{
+            System.out.println(" value from sp1 : "+i);
+        });
+
+        Spliterator<Integer> sp2 = sp1.trySplit();
+
+        if(sp2 != null){
+            sp2.forEachRemaining(i->{
+                System.out.println(" value from sp2 : "+i);
+            });
+        }
 
     }
 }
