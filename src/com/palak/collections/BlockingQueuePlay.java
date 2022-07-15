@@ -4,7 +4,9 @@ import java.util.concurrent.*;
 
 public class BlockingQueuePlay {
     public static void main(String[] args) throws InterruptedException {
-        BlockingQueue<Integer> arrayBlockingQueue = new ArrayBlockingQueue<Integer>(2);
+        BlockingQueue<Integer> arrayBlockingQueue = new ArrayBlockingQueue<Integer>(2);//FIFO
+        //LinkedBlockingDeque<Integer> linkedBlockingDeque = new LinkedBlockingDeque<>(2);//LIFO uses.. takeLast.
+
         Thread1 thread1 = new Thread1(arrayBlockingQueue);
         thread1.start();
         Thread2 thread2 = new Thread2(arrayBlockingQueue);
