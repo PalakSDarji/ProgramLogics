@@ -10,6 +10,7 @@ class ConstPlay {
     }
 
     var id : String = "sd";
+    var address : String? = null
 
     companion object S{
         //const val i : Men = Men();//Not allowed. Only string and primitive allowed.
@@ -20,6 +21,13 @@ class ConstPlay {
         println(lazyObject);
         println(this::lateVariable.isInitialized)
         lateVariable::isEmpty
+        defineStatic()
+
+        address?.let {
+
+        } ?: kotlin.run {
+
+        }
     }
 }
 
