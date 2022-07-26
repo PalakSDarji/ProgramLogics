@@ -1,7 +1,5 @@
 package com.palak.kolin
 
-import com.sun.org.slf4j.internal.Logger
-import com.sun.org.slf4j.internal.LoggerFactory
 
 inline fun <reified T> genericsExample(value: T) {
     println(value)
@@ -16,6 +14,6 @@ fun main() {
 
 class Foo {
     companion object{
-        val LOG : Logger? = LoggerFactory.getLogger(Foo::class.java)
+
     }
 }
