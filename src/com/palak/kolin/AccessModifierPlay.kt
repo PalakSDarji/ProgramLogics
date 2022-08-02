@@ -5,8 +5,11 @@ fun main() {
     //println(Sub().i) cant use.
 }
 
-class AccessModifierPlay {
+open class AccessModifierPlay {
 
+    fun method(){
+
+    }
 }
 
 open class Super{

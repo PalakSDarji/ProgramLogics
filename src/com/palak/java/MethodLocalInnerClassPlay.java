@@ -1,6 +1,12 @@
 package com.palak.java;
 
-public class MethodLocalInnerClassPlay {
+import com.palak.kolin.AccessModifierPlay;
+
+public class MethodLocalInnerClassPlay extends AccessModifierPlay{
+
+    void demo(){
+        method();
+    }
     public static void main(String[] args) {
 
         String data = "Sample";
@@ -23,5 +29,9 @@ public class MethodLocalInnerClassPlay {
 
         InnerClass innerClass = new InnerClass();
         innerClass.print();
+
+        AccessModifierPlay p = new AccessModifierPlay();
+        p.method();
+
     }
 }

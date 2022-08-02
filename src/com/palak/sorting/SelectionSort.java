@@ -6,6 +6,8 @@ public class SelectionSort {
 
     /**
      * 5,3,4,1
+     * 3,5,4,1
+     *
      * 1,3,4,5
      */
     private void sort(int[] arr){

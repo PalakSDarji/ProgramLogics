@@ -3,7 +3,7 @@ package com.palak.binary;
 import com.palak.custom.CustomBinaryTree;
 
 public class BinaryTreeProvider {
-    public static CustomBinaryTree provide(){
+    public static CustomBinaryTree<Integer> provide(){
 
         /**
          *     1
