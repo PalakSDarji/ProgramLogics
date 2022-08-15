@@ -38,3 +38,5 @@ fun main() {
 class Sample<out T : Any>{
 
 }
+
+object Wed : WeekDaysWorkHours()

@@ -58,4 +58,5 @@ data class Person(var name: String){
     init {
         i = 3
     }
+    var child : Person? = null
 }

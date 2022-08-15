@@ -8,7 +8,7 @@ import java.util.LinkedList;
 
 public class BFSDFSDemo {
 
-    ArrayDeque<CustomBinaryTree.TreeNode<Integer>> arrayDeque = new ArrayDeque();
+    ArrayDeque<CustomBinaryTree.TreeNode<Integer>> arrayDeque = new ArrayDeque<>();
     /**
      *     1
      *    / \

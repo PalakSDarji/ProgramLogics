@@ -1,5 +1,7 @@
 package com.palak
 
+import java.util.EnumSet.range
+
 class FibonacciDemo {
 
     private val hashMap : HashMap<Int, Int> = hashMapOf()
@@ -24,6 +26,19 @@ class FibonacciDemo {
         return fibonacci(number - 1) + fibonacci(number - 2)
     }
 
+    fun fibonacciUsingLoop(number : Int) {
+
+        var first = 1
+        var sec = 1
+
+        (1..number).forEach{ _ ->
+            println(first)
+            val next = first + sec
+            first = sec
+            sec = next
+        }
+    }
+
     private fun fibonacciUsingMemoization(number : Int) : Int {
 
         if (hashMap.containsKey(number)){
@@ -44,5 +59,7 @@ class FibonacciDemo {
 fun main() {
     val f = FibonacciDemo()
     //f.generate(1000, false) //will take like forever for 1000.
-    f.generate(1000, true)
+    f.generate(5, false)
+    println("---")
+    f.fibonacciUsingLoop(5)
 }
