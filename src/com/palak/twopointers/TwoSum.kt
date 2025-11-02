@@ -29,15 +29,15 @@ fun main() {
 
     val ps = TwoSum()
 
-    ps.twoSum(nums1, 9).print()
+    // ps.twoSum(nums1, 9).print()
     ps.twoSumBruteForce(nums1, 9).print()
     ps.twoSumHashMap(nums1, 9).print()
 
-    ps.twoSum(nums2, 6).print()
+    // ps.twoSum(nums2, 6).print()
     ps.twoSumBruteForce(nums2, 6).print()
     ps.twoSumHashMap(nums2, 6).print()
 
-    ps.twoSum(nums3, 6).print()
+    // ps.twoSum(nums3, 6).print()
     ps.twoSumBruteForce(nums3, 6).print()
     ps.twoSumHashMap(nums3, 6).print()
 }
@@ -48,9 +48,10 @@ public fun IntArray.print() {
 }
 
 class TwoSum {
+
+    // Only apply on sorted array, when the index is not returned, but the actual element.
     fun twoSum(nums: IntArray, target: Int): IntArray {
         val resultArray = IntArray(2)
-        nums.sort()
         var left = 0
         var right = nums.lastIndex
         while (left < right) {
